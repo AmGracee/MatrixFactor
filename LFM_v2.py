@@ -30,16 +30,17 @@ def LFM_2(a, k, iter_times, alpha=0.01, lr=0.01):
         err_list.append(err2_sum)
     return u,v,err_list
 A = np.array([[5,5,0,5],[5,0,3,4],[3,4,0,3],[0,0,5,3],[5,4,4,5],[5,4,5,5]])
-U,V,err_list = LFM_2(A,3,iter_times=200, lr=0.01,alpha=0.01)
+U,V,err_list = LFM_2(A,3,iter_times=1000, lr=0.01,alpha=0.01)
 
 err_log = np.log(np.array(err_list)) #log函数
 
 plt.plot("err_list")
 plt.plot(err_list)
-plt.figure(3) # 画两张图
+plt.figure(2) # 画两张图
 plt.plot(err_log)
 plt.show()
 print("U=",U)
 print("V=",V)
+print(np.dot(U,V))
 # print("ERR=",err_list)
 print(err_list[-1]) #输出最后一列
