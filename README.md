@@ -15,4 +15,8 @@ Matrix Factorization的原理比较简单，就是将一个矩阵D分解为U和V
 梯度下降（梯度更新）
 ![img_3.png](img_3.png)
 
+
+v1版本是直推的思路
+v2版本是通过矩阵计算直接算的U和V的梯度，v1的循环效率太低了，可以用矩阵运算
+
 [参考这篇文章](https://blog.csdn.net/u014595019/article/details/80586438)

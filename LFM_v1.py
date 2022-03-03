@@ -20,10 +20,10 @@ def lfm(a,k):
                 if math.fabs(a[i][j]) > 1e-4:
                     err = a[i][j] - np.dot(u[i],v[:,j])
                     for r in range(k):
-                        grad_u = err * v[r][j] - lambda_ * u[i][r]  #对u求导
-                        grad_v = err * u[i][r] - lambda_ * v[r][j]  #对v求导
-                        u[i][r] += alpha * grad_u   #u的梯度更新
-                        v[r][j] += alpha * grad_v   #v梯度更新
+                        grad_u = -2*err * v[r][j] + 2*lambda_ * u[i][r]  #对u求导
+                        grad_v = -2*err * u[i][r] + 2*lambda_ * v[r][j]  #对v求导
+                        u[i][r] -= alpha * grad_u   #u的梯度更新
+                        v[r][j] -= alpha * grad_v   #v梯度更新
     return u,v
 
 
